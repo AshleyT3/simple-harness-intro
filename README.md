@@ -66,6 +66,38 @@ run with [llama.cpp](https://github.com/ggml-org/llama.cpp).
 The model is downloaded separately and is covered by its own license
 (Llama 3.2 Community License), not this repo's.
 
+This is a small model (about 2 GB), released in 2024, that runs on an ordinary PC.
+Larger and newer models are far more capable; this one keeps the mechanics easy to see.
+
+### Verify the download
+
+Download only from the repo above, and watch for lookalike repo names.
+Then check the file's SHA256 hash:
+
+```powershell
+Get-FileHash models\Llama-3.2-3B-Instruct-Q4_K_M.gguf -Algorithm SHA256
+```
+
+Expected:
+
+```
+6C1A2B41161032677BE168D354123594C0E6E67D2B9227C84F296AD037C728FF
+```
+
+It should also match the SHA256 shown on the file's page on Hugging Face.
+
+### Using a different model
+
+You can swap in another model, as long as it is:
+
+- **A text-generation model**, not an image, audio, or embedding model.
+- **An instruct (chat) version**, not a "base" model. Base models don't follow the system prompt well.
+- **In GGUF format**, which is what llama.cpp runs.
+
+Download it into `models\`, then change the filename after `-m` in `start-model.ps1`.
+The same download advice applies: use a source you trust, and verify the hash.
+How reliably a model writes the `TOOL:` line varies; larger models usually do better.
+
 ## License
 
 The scripts in this repo are MIT licensed. See [LICENSE](LICENSE).
