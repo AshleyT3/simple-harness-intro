@@ -9,7 +9,7 @@ Run a small AI model on your own PC, then watch a tiny PowerShell script give it
 
 Every AI agent you've heard of works this way, just with more tools.
 
-📺 Video: *(link coming soon)*
+📺 Video: [How an AI Harness Works: PowerShell + a Local LLM (llama.cpp)](https://www.youtube.com/watch?v=blFjc03h_Cc)
 
 ## Requirements
 
